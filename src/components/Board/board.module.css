@@ -1,0 +1,26 @@
+.board {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    height: 80%;
+    aspect-ratio: 1 / 1;
+    border: 3rem solid;
+    gap: 1rem;
+    padding: 1rem;
+    border-color: var(--black);
+}
+
+.container {
+    height: 100%;
+}
+
+.borderRadius {
+    border-radius: 2rem;
+}
+
+.red {
+    box-shadow: 0 0 5rem 1rem var(--red);
+}
+
+.blue {
+    box-shadow: 0 0 5rem 1rem var(--blue);
+}

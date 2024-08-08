@@ -1,0 +1,17 @@
+:root {
+  --red: rgb(239, 72, 72);
+  --blue: rgb(86, 86, 251);
+  --black: #383838;
+  --white: rgb(233, 233, 233);
+}
+
+body{
+  margin: 0;
+}
+
+.app{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
