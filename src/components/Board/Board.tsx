@@ -8,32 +8,28 @@ interface BoardProps {turn: teams}
 
 const Board = ({turn}: BoardProps) => {
 
-    const _classes = [classes.board, classes.borderRadius] 
-    turn === "red" ? _classes.push(classes.red) : _classes.push(classes.blue)
+    const _classes = [classes.board, classes.borderRadius, turn == "red" ? classes.red : classes.blue] 
+    
     useEffect(() => {
         generateSquares()
     },[])
     const [colors, setColors] = useState<("red" | "blue" | "black" | "white")[]>()
-    const redCount = 7 + (turn === "red" ? 1 : 0);
-    const blueCount = 7 + (turn === "red" ? 0 : 1);
+
+    console.log(turn);
     
     const generateSquares = () => {
-        const squares = Array(9).fill("white")
+        const redCount = 8 + (turn == "red" ? 1 : 0);
+        const blueCount = 8 + (turn == "blue" ? 1 : 0);
+        const squares = Array(7).fill("white")
         squares.push("black")
-        const reds: string[] = Array(redCount).fill("red");
-        const blues: string[] = Array(blueCount).fill("blue");
+        const reds = Array(redCount).fill("red");
+        const blues = Array(blueCount).fill("blue");
         setColors([...reds, ...blues, ...squares].sort(() => Math.random() - 0.5))
     }
 
-
-    console.log(colors);
-    
-    
     const squares = colors?.map((v, i) => {
         return <Square key={i} color={v} />
     })
-
-
 
     return (
         <div className={_classes.join(" ")}>
